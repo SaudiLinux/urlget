@@ -1,0 +1,29 @@
+# Dependencies for urlget security testing tool
+
+# Web scraping and automation
+selenium>=4.0.0
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+
+# DNS and networking
+dnslib>=0.9.23
+scapy>=2.4.5
+
+# CLI and argument parsing
+argparse>=1.4.0
+colorama>=0.4.6
+
+# Data handling and parsing
+urllib3>=1.26.0
+
+# Version checking and updates
+packaging>=21.0
+
+# Additional utilities
+pyyaml>=6.0
+
+# Note: ChromeDriver needs to be installed separately
+# Download from: https://chromedriver.chromium.org/
+# Or use webdriver-manager:
+webdriver-manager>=3.8.0
