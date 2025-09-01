@@ -19,7 +19,7 @@ import requests
 from datetime import datetime, timedelta
 from packaging import version
 
-from .utils import setup_logger
+from urlget.utils import setup_logger
 
 # عنوان مستودع GitHub
 GITHUB_REPO = "SaudiLinux/urlget"

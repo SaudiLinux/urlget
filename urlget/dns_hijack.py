@@ -25,7 +25,7 @@ import dns.name
 from dnslib import DNSRecord, DNSHeader, DNSQuestion, RR, QTYPE, A, AAAA, MX, NS, TXT, SOA
 from dnslib.server import DNSServer, DNSHandler, BaseResolver
 
-from .utils import setup_logger, check_linux, check_root, save_results
+from urlget.utils import setup_logger, check_linux, check_root, save_results
 
 class DNSHijacker:
     """فئة لتنفيذ هجمات اختطاف نظام أسماء النطاقات (DNS)"""

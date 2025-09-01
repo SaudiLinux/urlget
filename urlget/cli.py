@@ -11,7 +11,7 @@ from urlget.crawler import ChromeCrawler
 from urlget.fuzzer import HTTPFuzzer
 from urlget.xss import XSSScanner
 from urlget.csrf import CSRFGenerator
-from urlget.dns import DNSHijacker
+from urlget.dns_hijack import DNSHijacker
 from urlget.updater import check_and_update
 from urlget.utils import banner
 from urlget import __version__
@@ -161,9 +161,9 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
-    # التحقق من نظام التشغيل
+    # التحقق من نظام التشغيل مع تحذير بدلاً من المنع
     if sys.platform != "linux":
-        print(f"{Fore.RED}[!] هذه الأداة تعمل فقط على نظام لينكس{Style.RESET_ALL}")
-        sys.exit(1)
+        print(f"{Fore.YELLOW}[!] تحذير: بعض الميزات قد لا تعمل بشكل كامل على نظام {sys.platform}{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}[!] للحصول على أفضل أداء، يُنصح باستخدام نظام لينكس{Style.RESET_ALL}")
     
     main()
