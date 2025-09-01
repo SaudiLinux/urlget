@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <!-- خلفية دائرية -->
+  <circle cx="250" cy="250" r="240" fill="#2c3e50" />
+  <circle cx="250" cy="250" r="220" fill="#34495e" />
+  
+  <!-- شبكة الإنترنت -->
+  <g stroke="#3498db" stroke-width="3" fill="none">
+    <path d="M 100,250 C 100,150 200,100 250,100 C 300,100 400,150 400,250 C 400,350 300,400 250,400 C 200,400 100,350 100,250 Z" />
+    <path d="M 150,250 C 150,180 200,150 250,150 C 300,150 350,180 350,250 C 350,320 300,350 250,350 C 200,350 150,320 150,250 Z" />
+    <path d="M 200,250 C 200,210 220,200 250,200 C 280,200 300,210 300,250 C 300,290 280,300 250,300 C 220,300 200,290 200,250 Z" />
+    <line x1="100" y1="250" x2="400" y2="250" />
+    <line x1="250" y1="100" x2="250" y2="400" />
+  </g>
+  
+  <!-- رمز URL -->
+  <g fill="#e74c3c">
+    <path d="M 180,230 L 180,270 L 200,270 L 200,250 L 220,250 L 220,230 Z" />
+    <rect x="230" y="230" width="40" height="40" />
+    <path d="M 280,230 L 280,270 L 320,270 L 320,250 L 300,250 L 300,230 Z" />
+  </g>
+  
+  <!-- سهم الحصول -->
+  <g fill="#2ecc71">
+    <path d="M 250,150 L 280,180 L 260,180 L 260,320 L 280,320 L 250,350 L 220,320 L 240,320 L 240,180 L 220,180 Z" />
+  </g>
+  
+  <!-- نص الشعار -->
+  <text x="250" y="450" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#ecf0f1">urlget</text>
+  
+  <!-- اسم المبرمج -->
+  <text x="250" y="480" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#bdc3c7">SayerLinux</text>
+</svg>
