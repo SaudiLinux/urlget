@@ -1,0 +1,109 @@
+# سجلات DNS مزيفة للاختطاف
+# التنسيق: domain,record_type,value
+
+# سجلات A (تحويل النطاق إلى عنوان IP)
+example.com,A,192.168.1.100
+www.example.com,A,192.168.1.100
+mail.example.com,A,192.168.1.101
+login.example.com,A,192.168.1.102
+api.example.com,A,192.168.1.103
+admin.example.com,A,192.168.1.104
+webmail.example.com,A,192.168.1.105
+portal.example.com,A,192.168.1.106
+secure.example.com,A,192.168.1.107
+shop.example.com,A,192.168.1.108
+blog.example.com,A,192.168.1.109
+forum.example.com,A,192.168.1.110
+
+# سجلات AAAA (تحويل النطاق إلى عنوان IPv6)
+example.com,AAAA,2001:db8::1
+www.example.com,AAAA,2001:db8::2
+
+# سجلات MX (خوادم البريد الإلكتروني)
+example.com,MX,10 mail.attacker.com
+example.com,MX,20 mail2.attacker.com
+
+# سجلات NS (خوادم الأسماء)
+example.com,NS,ns1.attacker.com
+example.com,NS,ns2.attacker.com
+
+# سجلات TXT (معلومات نصية)
+example.com,TXT,v=spf1 ip4:192.168.1.0/24 -all
+_dmarc.example.com,TXT,v=DMARC1; p=none; rua=mailto:admin@attacker.com
+
+# سجلات SOA (بداية السلطة)
+example.com,SOA,ns1.attacker.com admin.attacker.com 2023010101 3600 1800 604800 86400
+
+# نطاقات إضافية للاختبار
+bank.com,A,192.168.1.200
+www.bank.com,A,192.168.1.200
+secure.bank.com,A,192.168.1.201
+login.bank.com,A,192.168.1.202
+mail.bank.com,A,192.168.1.203
+bank.com,MX,10 mail.attacker.com
+
+social.com,A,192.168.1.210
+www.social.com,A,192.168.1.210
+api.social.com,A,192.168.1.211
+cdn.social.com,A,192.168.1.212
+social.com,MX,10 mail.attacker.com
+
+gov.org,A,192.168.1.220
+www.gov.org,A,192.168.1.220
+portal.gov.org,A,192.168.1.221
+services.gov.org,A,192.168.1.222
+gov.org,MX,10 mail.attacker.com
+
+# نطاقات محلية
+router.local,A,192.168.1.1
+gateway.local,A,192.168.1.1
+admin.router.local,A,192.168.1.100
+wifi.local,A,192.168.1.100
+printer.local,A,192.168.1.100
+nas.local,A,192.168.1.100
+media.local,A,192.168.1.100
+iot.local,A,192.168.1.100
+camera.local,A,192.168.1.100
+thermostat.local,A,192.168.1.100
+
+# نطاقات شائعة
+google.com,A,192.168.1.100
+www.google.com,A,192.168.1.100
+mail.google.com,A,192.168.1.100
+drive.google.com,A,192.168.1.100
+docs.google.com,A,192.168.1.100
+
+facebook.com,A,192.168.1.100
+www.facebook.com,A,192.168.1.100
+m.facebook.com,A,192.168.1.100
+api.facebook.com,A,192.168.1.100
+
+twitter.com,A,192.168.1.100
+www.twitter.com,A,192.168.1.100
+api.twitter.com,A,192.168.1.100
+
+github.com,A,192.168.1.100
+www.github.com,A,192.168.1.100
+api.github.com,A,192.168.1.100
+
+linkedin.com,A,192.168.1.100
+www.linkedin.com,A,192.168.1.100
+
+instagram.com,A,192.168.1.100
+www.instagram.com,A,192.168.1.100
+
+amazon.com,A,192.168.1.100
+www.amazon.com,A,192.168.1.100
+
+netflix.com,A,192.168.1.100
+www.netflix.com,A,192.168.1.100
+
+microsoft.com,A,192.168.1.100
+www.microsoft.com,A,192.168.1.100
+login.microsoft.com,A,192.168.1.100
+office.com,A,192.168.1.100
+outlook.com,A,192.168.1.100
+
+apple.com,A,192.168.1.100
+www.apple.com,A,192.168.1.100
+icloud.com,A,192.168.1.100
