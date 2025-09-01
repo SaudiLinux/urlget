@@ -23,6 +23,7 @@ setup(
         "tqdm",
         "lxml",
         "cryptography",
+        "packaging",
     ],
     entry_points={
         "console_scripts": [
