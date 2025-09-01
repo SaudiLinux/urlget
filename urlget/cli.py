@@ -12,12 +12,17 @@ from urlget.fuzzer import HTTPFuzzer
 from urlget.xss import XSSScanner
 from urlget.csrf import CSRFGenerator
 from urlget.dns import DNSHijacker
+from urlget.updater import check_and_update
 from urlget.utils import banner
+from urlget import __version__
 
 def main():
     """نقطة الدخول الرئيسية لأداة urlget"""
     # تهيئة colorama
     init(autoreset=True)
+    
+    # التحقق من وجود تحديثات
+    check_and_update(__version__, auto_update=True, silent=False, verbose=False)
     
     # عرض الشعار
     banner()
@@ -35,6 +40,11 @@ def main():
     
     # إنشاء مجموعات الوسائط للأوامر الفرعية
     subparsers = parser.add_subparsers(dest="command", help="الأوامر المتاحة")
+    
+    # أمر التحديث
+    update_parser = subparsers.add_parser("update", help="تحديث الأداة إلى أحدث إصدار")
+    update_parser.add_argument("--check-only", action="store_true", help="التحقق فقط من وجود تحديثات دون تثبيتها")
+    update_parser.add_argument("--force", action="store_true", help="إجبار التحديث حتى لو كان الإصدار الحالي هو الأحدث")
     
     # أمر الزحف
     crawl_parser = subparsers.add_parser("crawl", help="زحف الموقع باستخدام Chrome")
@@ -75,7 +85,25 @@ def main():
     
     # تنفيذ الأمر المطلوب
     try:
-        if args.command == "crawl":
+        if args.command == "update":
+            from urlget.updater import Updater
+            updater = Updater(__version__, verbose=args.verbose)
+            if args.check_only:
+                update_info = updater.check_for_updates(force=args.force)
+                if update_info:
+                    print(f"\n{Fore.GREEN}[+] تم العثور على إصدار جديد: {update_info['version']} (الحالي: {__version__}){Style.RESET_ALL}")
+                    print(f"\nملاحظات الإصدار:")
+                    print(f"{update_info['release_notes']}")
+                else:
+                    print(f"\n{Fore.GREEN}[+] أنت تستخدم أحدث إصدار ({__version__}){Style.RESET_ALL}")
+            else:
+                update_info = updater.check_for_updates(force=args.force)
+                if update_info:
+                    updater.update(update_info)
+                else:
+                    print(f"\n{Fore.GREEN}[+] أنت تستخدم أحدث إصدار ({__version__}){Style.RESET_ALL}")
+        
+        elif args.command == "crawl":
             crawler = ChromeCrawler(
                 url=args.url,
                 depth=args.depth,
